@@ -1,0 +1,29 @@
+<script>
+  let sum = 0;
+  let fibNum = [1, 2];
+
+  let prev1 = fibNum[fibNum.length - 2];
+  let prev2 = fibNum[fibNum.length - 1];
+
+  sum = prev1 + prev2; 
+
+  while(sum < 4000000){
+    fibNum.push(sum);
+
+    prev1 = prev2;
+    prev2 = sum;
+
+    sum = prev1 + prev2;
+  }
+
+  //console.log(fibNum);
+
+  let result = 0;
+  for (let i = 0; i < fibNum.length; i++){
+    if(fibNum[i] % 2 === 0){
+      result += fibNum[i];
+    }
+  }
+
+  console.log("the result is:" + result);
+</script>
